@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Pms\ConfiguraObraBundle\ConfiguraObraBundle(),
             new Pms\ProcuraBundle\ProcuraBundle(),
             new Pms\AutenticaBundle\AutenticaBundle(),
+            new Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

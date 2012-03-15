@@ -21,6 +21,7 @@
       <parameter key="ConfiguraObraBundle">Pms\ConfiguraObraBundle\ConfiguraObraBundle</parameter>
       <parameter key="ProcuraBundle">Pms\ProcuraBundle\ProcuraBundle</parameter>
       <parameter key="AutenticaBundle">Pms\AutenticaBundle\AutenticaBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Symfony\Bundle\DoctrineFixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -2057,6 +2058,33 @@
                   <argument type="service" id="templating.loader"/>
                   <argument>AutenticaBundle</argument>
                   <argument>/var/www/pms/src/Pms/AutenticaBundle/Resources/views</argument>
+                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>DoctrineFixturesBundle</argument>
+                  <argument>/var/www/pms/app/Resources/DoctrineFixturesBundle/views</argument>
+                  <argument>/^[^.]+\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>DoctrineFixturesBundle</argument>
+                  <argument>/var/www/pms/vendor/bundles/Symfony/Bundle/DoctrineFixturesBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>

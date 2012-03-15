@@ -18,6 +18,14 @@ ContactoBundle:
     type:     annotation
     prefix:   /
 
+#Busca Personas
+RegistroCompania:
+    pattern: /contacto/{pagina}
+    defaults: { _controller:ContactoBundle:Sitio:indice }
+
+compania_nuevo:
+    pattern: /contacto/compania_nuevo
+    defaults: { _controller:ContactoBundle:Default:compania_nuevo }
 #Inicio:
 #    pattern: /sitio/{pagina}
 #    defaults: { _controller:ContactoBundle:Sitio:estatica #}

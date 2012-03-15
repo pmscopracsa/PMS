@@ -158,6 +158,16 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::indexAction',)), array('_route' => 'pms_contacto_default_index'));
         }
 
+        // RegistroCompania
+        if (0 === strpos($pathinfo, '/contacto') && preg_match('#^/contacto/(?P<pagina>[^/]+?)$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\SitioController::indiceAction',)), array('_route' => 'RegistroCompania'));
+        }
+
+        // compania_nuevo
+        if ($pathinfo === '/contacto/compania_nuevo') {
+            return array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::compania_nuevoAction',  '_route' => 'compania_nuevo',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

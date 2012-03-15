@@ -16,4 +16,9 @@ class DefaultController extends Controller
     {
         return array('name' => $name);
     }
+
+    public function compania_nuevoAction()
+    {
+      return $this->render('HOLA');
+    }
 }

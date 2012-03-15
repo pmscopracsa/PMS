@@ -36,6 +36,8 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'pms_procura_default_index' => true,
        'pms_configuraobra_default_index' => true,
        'pms_contacto_default_index' => true,
+       'RegistroCompania' => true,
+       'compania_nuevo' => true,
     );
 
     /**
@@ -172,5 +174,15 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getpms_contacto_default_indexRouteInfo()
     {
         return array(array (  0 => 'name',), array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/hello',  ),));
+    }
+
+    private function getRegistroCompaniaRouteInfo()
+    {
+        return array(array (  0 => 'pagina',), array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\SitioController::indiceAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'pagina',  ),  1 =>   array (    0 => 'text',    1 => '/contacto',  ),));
+    }
+
+    private function getcompania_nuevoRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::compania_nuevoAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/contacto/compania_nuevo',  ),));
     }
 }
