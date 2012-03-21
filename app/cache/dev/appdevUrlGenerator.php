@@ -38,6 +38,8 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'pms_contacto_default_index' => true,
        'RegistroCompania' => true,
        'compania_nuevo' => true,
+       'persona_nuevo' => true,
+       'lista_distribucion_nuevo' => true,
     );
 
     /**
@@ -178,11 +180,21 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getRegistroCompaniaRouteInfo()
     {
-        return array(array (  0 => 'pagina',), array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\SitioController::indiceAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'pagina',  ),  1 =>   array (    0 => 'text',    1 => '/contacto',  ),));
+        return array(array (  0 => 'pagina',), array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\SitioController::indiceAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'pagina',  ),  2 =>   array (    0 => 'text',    1 => '/contacto',  ),));
     }
 
     private function getcompania_nuevoRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::compania_nuevoAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/contacto/compania_nuevo',  ),));
+    }
+
+    private function getpersona_nuevoRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::persona_nuevoAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/contacto/persona_nuevo',  ),));
+    }
+
+    private function getlista_distribucion_nuevoRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::lista_distribucion_nuevoAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/contacto/lista_distribucion_nuevo',  ),));
     }
 }

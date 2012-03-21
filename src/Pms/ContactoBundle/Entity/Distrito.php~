@@ -19,6 +19,12 @@ class Distrito
    * @ORM\Column(type="string", length="100")
    */
   protected $descripcion;
+  
+  /**
+   * @ORM\ManyToOne(targetEntity="Pms\ContactoBundle\Entity\Provincia")
+   * @ORM\JoinColumn(name="provincia_id", referencedColumnName="id") 
+   */
+  protected $provincia;
 
     /**
      * Get id

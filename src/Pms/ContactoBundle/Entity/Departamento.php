@@ -49,4 +49,5 @@ class Departamento
     {
         return $this->descripcion;
     }
+
 }

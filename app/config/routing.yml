@@ -20,12 +20,22 @@ ContactoBundle:
 
 #Busca Personas
 RegistroCompania:
-    pattern: /contacto/{pagina}
+    pattern: /contacto/{pagina}/
     defaults: { _controller:ContactoBundle:Sitio:indice }
+#    requirements:
+#      name:".+"
 
 compania_nuevo:
     pattern: /contacto/compania_nuevo
     defaults: { _controller:ContactoBundle:Default:compania_nuevo }
+    
+persona_nuevo:
+  pattern: /contacto/persona_nuevo
+  defaults: { _controller:ContactoBundle:Default:persona_nuevo }
+  
+lista_distribucion_nuevo:
+  pattern: /contacto/lista_distribucion_nuevo
+  defaults: { _controller:ContactoBundle:Default:lista_distribucion_nuevo }
 #Inicio:
 #    pattern: /sitio/{pagina}
 #    defaults: { _controller:ContactoBundle:Sitio:estatica #}

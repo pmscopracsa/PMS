@@ -64,6 +64,7 @@
   'ContactoBundle:Default:inicio.html.twig' => '/var/www/pms/src/Pms/ContactoBundle/Resources/views/Default/inicio.html.twig',
   'ContactoBundle:Default:index.html.twig' => '/var/www/pms/src/Pms/ContactoBundle/Resources/views/Default/index.html.twig',
   'ContactoBundle:Contacto:regcompania.html.twig' => '/var/www/pms/src/Pms/ContactoBundle/Resources/views/Contacto/regcompania.html.twig',
+  'ContactoBundle:Contacto:sidebar_contacto.html.twig' => '/var/www/pms/src/Pms/ContactoBundle/Resources/views/Contacto/sidebar_contacto.html.twig',
   'ConfiguraObraBundle:Default:index.html.twig' => '/var/www/pms/src/Pms/ConfiguraObraBundle/Resources/views/Default/index.html.twig',
   'ProcuraBundle:Default:index.html.twig' => '/var/www/pms/src/Pms/ProcuraBundle/Resources/views/Default/index.html.twig',
   'AutenticaBundle:Default:index.html.twig' => '/var/www/pms/src/Pms/AutenticaBundle/Resources/views/Default/index.html.twig',
@@ -104,4 +105,6 @@
   'SensioDistributionBundle:Configurator:form.html.twig' => '/var/www/pms/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/views/Configurator/form.html.twig',
   'SensioDistributionBundle:Configurator:steps.html.twig' => '/var/www/pms/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/views/Configurator/steps.html.twig',
   '::base.html.twig' => '/var/www/pms/app/Resources/views/base.html.twig',
+  ':blueprint/lib:settings.example.yml' => '/var/www/pms/app/Resources/views/blueprint/lib/settings.example.yml',
+  ':blueprint/lib/blueprint:grid.css.erb' => '/var/www/pms/app/Resources/views/blueprint/lib/blueprint/grid.css.erb',
 );

@@ -19,6 +19,13 @@ class Provincia
    * @ORM\Column(type="string", length=100)
    */
   protected $descripcion;
+    
+  /**
+   * @ORM\ManyToOne(targetEntity="Pms\ContactoBundle\Entity\Departamento")
+   * @ORM\JoinColumn(name="departamento_id", referencedColumnName="id") 
+   */
+  protected $departamento;
+  
 
     /**
      * Get id
@@ -48,5 +55,26 @@ class Provincia
     public function getDescripcion()
     {
         return $this->descripcion;
+    }
+  
+
+    /**
+     * Set departamento
+     *
+     * @param Pms\ContactoBundle\Entity\Departamento $departamento
+     */
+    public function setDepartamento(\Pms\ContactoBundle\Entity\Departamento $departamento)
+    {
+        $this->departamento = $departamento;
+    }
+
+    /**
+     * Get departamento
+     *
+     * @return Pms\ContactoBundle\Entity\Departamento 
+     */
+    public function getDepartamento()
+    {
+        return $this->departamento;
     }
 }

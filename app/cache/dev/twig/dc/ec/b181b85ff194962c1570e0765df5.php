@@ -10,8 +10,8 @@ class __TwigTemplate_dcecb181b85ff194962c1570e0765df5 extends Twig_Template
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
-            'body' => array($this, 'block_body'),
             'javascripts' => array($this, 'block_javascripts'),
+            'body' => array($this, 'block_body'),
         );
     }
 
@@ -29,20 +29,22 @@ class __TwigTemplate_dcecb181b85ff194962c1570e0765df5 extends Twig_Template
         ";
         // line 6
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
-        echo "        <link rel=\"shortcut icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
-    </head>
-    <body>
-        ";
-        // line 10
-        $this->displayBlock('body', $context, $blocks);
-        // line 11
+        // line 9
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
         // line 12
-        echo "    </body>
+        echo "        <link rel=\"shortcut icon\" href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
+        echo "\" />
+        
+    </head>
+    <body>
+        ";
+        // line 16
+        $this->displayBlock('body', $context, $blocks);
+        // line 17
+        echo "        
+    </body>
 </html>
 ";
     }
@@ -50,21 +52,27 @@ class __TwigTemplate_dcecb181b85ff194962c1570e0765df5 extends Twig_Template
     // line 5
     public function block_title($context, array $blocks = array())
     {
-        echo "Welcome!";
+        echo "Bienenido al Control PMS";
     }
 
     // line 6
     public function block_stylesheets($context, array $blocks = array())
     {
+        // line 7
+        echo "        
+        ";
     }
 
-    // line 10
-    public function block_body($context, array $blocks = array())
-    {
-    }
-
-    // line 11
+    // line 9
     public function block_javascripts($context, array $blocks = array())
+    {
+        // line 10
+        echo "
+        ";
+    }
+
+    // line 16
+    public function block_body($context, array $blocks = array())
     {
     }
 
