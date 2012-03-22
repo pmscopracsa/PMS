@@ -1,0 +1,76 @@
+{% extends '::base.html.twig' %}
+
+{%block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('bundles/contacto/css/normalizar.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+{% endblock %}
+
+{% block title %} 
+REGISTRO DE PERSONA
+{% endblock %}
+
+{% block body %}
+
+<form action="" method="post">
+    
+    <table>
+        <tr>
+            <td><label for="dni">D.N.I</label></td>
+            <td><input type="text" size="15" name="dni" /></td>
+        </tr>
+        <tr>
+            <td><label for="nombre">Nombre:</label></td>
+            <td><input type="text" size="15" name="nombre" /></td>
+        </tr>
+        <tr>
+            <td><label for="direccion">Direccion:</label></td>
+            <td><input type="text" size="15" name="direccion" /></td>
+        </tr>
+        <tr>
+            <td><label for="compania">Compania</label></td>
+            <td><input type="text" size="15" name="compania" /></td>
+        </tr>
+        <tr>
+            <td><label for="cargo">Cargo</label></td>
+            <td><input type="text" size="15" name="cargo" /></td>
+        </tr>
+        <tr>
+            <td><label for="tfijo">Telefono Fijo</label></td>
+            <td><input type="text" size="15" name="tfijo" /></td>
+        </tr>
+        <tr>
+            <td><label for="tmovil">Telefono Movil</label></td>
+            <td><input type="text" size="15" name="tmovil" /></td>
+        </tr>
+        <tr>
+            <td><label for="nextel">Nextel</label></td>
+            <td><input type="text" size="15" name="nextel" /></td>
+        </tr>
+        <tr>
+            <td><label for="especialidad">Especialidad</label></td>
+            <td><input type="text" size="15" name="especialidad" /></td>
+        </tr>
+        <tr>
+            <td><label for="observacion">Observacion:</label></td>
+            <td><input type="text" size="15" name="observacion" /></td>
+        </tr>
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="text" size="15" name="email" /></td>
+        </tr>
+        <tr>
+            <td><label for="web">Direccion Web</label></td>
+            <td><input type="text" size="15" name="web" /></td>
+        </tr>
+        <tr>
+            <td><label for="viaenvio">Via Envio</label></td>
+            <td><input type="text" size="15" name="viaenvio" /></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

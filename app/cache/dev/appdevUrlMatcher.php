@@ -158,26 +158,27 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::indexAction',)), array('_route' => 'pms_contacto_default_index'));
         }
 
-        // RegistroCompania
-        if (0 === strpos($pathinfo, '/contacto') && preg_match('#^/contacto/(?P<pagina>[^/]+?)/?$#xs', $pathinfo, $matches)) {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'RegistroCompania');
-            }
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\SitioController::indiceAction',)), array('_route' => 'RegistroCompania'));
-        }
-
         // compania_nuevo
-        if ($pathinfo === '/contacto/compania_nuevo') {
+        if (rtrim($pathinfo, '/') === '/contacto/compania_nuevo') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'compania_nuevo');
+            }
             return array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::compania_nuevoAction',  '_route' => 'compania_nuevo',);
         }
 
         // persona_nuevo
-        if ($pathinfo === '/contacto/persona_nuevo') {
+        if (rtrim($pathinfo, '/') === '/contacto/persona_nuevo') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'persona_nuevo');
+            }
             return array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::persona_nuevoAction',  '_route' => 'persona_nuevo',);
         }
 
         // lista_distribucion_nuevo
-        if ($pathinfo === '/contacto/lista_distribucion_nuevo') {
+        if (rtrim($pathinfo, '/') === '/contacto/lista_distribucion_nuevo') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'lista_distribucion_nuevo');
+            }
             return array (  '_controller' => 'Pms\\ContactoBundle\\Controller\\DefaultController::lista_distribucion_nuevoAction',  '_route' => 'lista_distribucion_nuevo',);
         }
 
